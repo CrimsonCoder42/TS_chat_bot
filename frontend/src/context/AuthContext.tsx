@@ -1,9 +1,12 @@
-import {ReactNode, createContext, useContext, useEffect, useState} from 'react';
+import {ReactNode, 
+        createContext,
+        useContext, 
+        useEffect, 
+        useState} from 'react';
 
 type User = {
   name: string;
   email: string;
-
 }
 
 type UserAuth = {
@@ -41,3 +44,4 @@ export const AuthProvider = ({children}: {children: ReactNode }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
+
