@@ -27,7 +27,7 @@ const Header = () => {
         bg='#51538F' 
         textColor='white' 
         to='/' 
-        text='Home' 
+        text='Logout' 
         onClick={auth.logout}
         /> 
       </> ): <>
