@@ -28,10 +28,10 @@ export const loginValidator = [
 ];
 
 export const signupValidator = [
-  body('name').trim().notEmpty().withMessage('Name is required'),
+  body('name').notEmpty().withMessage('Name is required'),
   ...loginValidator,
 ]
 
 export const chatCompletionValidator = [
-  body('message').trim().notEmpty().withMessage('Message is required')
+  body('message').notEmpty().withMessage('Message is required')
 ]
