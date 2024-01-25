@@ -59,6 +59,8 @@ const Chat = () => {
         });
     }
   }, [auth]);
+
+  // will reroute to login if user is not logged in
   useEffect(() => {
     if (!auth?.user) {
       return navigate("/login");
@@ -165,7 +167,7 @@ const Chat = () => {
           }}
         >
           {chatMessages.map((chat, index) => (
-            //@ts-ignore
+            //@ts-expect-error
             <ChatItem content={chat.content} role={chat.role} key={index} />
           ))}
         </Box>
