@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Typography, Button } from '@mui/material'
 import CustomizedInput from '../components/shared/CustomizedInput'
 import { toast } from 'react-hot-toast'
@@ -19,13 +19,19 @@ const Login = () => {
       toast.loading("Signing in...", {id: "login"})
       await auth?.login(email, password)
       toast.success("Signed In Successful", {id: "login"})
-      navigate("/")
 
     } catch (error) {
       console.log(error)
       toast.error('Signing In Failed', {id: "login"})
     }
   }
+
+  useEffect(() => {
+    if (auth?.user) {
+      return navigate('/chat')
+    }
+  }, [auth])
+
   return (
   <Box width={'100%'} height={"100%"} display="flex" flex={1}>  
     <Box 
